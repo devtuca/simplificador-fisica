@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tuca.luizcampofisica.Control">
+    <children>
+        <Label layoutX="196.0" layoutY="66.0" text="Selecione o que você deseja calcular">
+            <font>
+                <Font name="Droid Sans Mono Dotted" size="12.0" />
+            </font>
+        </Label>
+        <Button layoutX="248.0" layoutY="153.0" mnemonicParsing="false" text="Velocidade" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="100.0" mnemonicParsing="false" text="2º Lei Newton" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="248.0" layoutY="229.0" mnemonicParsing="false" text="Calorimetria" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="248.0" layoutY="272.0" mnemonicParsing="false" text="Pressão" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="251.0" layoutY="304.0" mnemonicParsing="false" text="MRU" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="247.0" layoutY="344.0" mnemonicParsing="false" text="MRUV" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+        <Button layoutX="377.0" layoutY="213.0" mnemonicParsing="false" text="Eletricidade" AnchorPane.bottomAnchor="162.0" AnchorPane.leftAnchor="1000.0" />
+        <Button layoutX="390.0" layoutY="260.0" mnemonicParsing="false" text="Campo Elétrico" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="200.0" />
+        <Button layoutX="403.0" layoutY="304.0" mnemonicParsing="false" text="Força" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="200.0" />
+        <Button layoutX="387.0" layoutY="344.0" mnemonicParsing="false" text="Trabalho" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="200.0" />
+    </children>
+</AnchorPane>
+

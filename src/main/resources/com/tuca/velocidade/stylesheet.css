@@ -1,0 +1,43 @@
+* {
+    -fx-primary: #2A2E37;
+    -fx-secondary: #77DD77;
+    -fx-primarytext: #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1: #1976D2;
+    -fx-background-default: #ff964f;
+}
+
+.button {
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-background-default;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
+.button:hover {
+    -fx-fill: #2A2E37;
+    -fx-border-color: -fx-background-default;
+    -fx-background-color: -fx-background-default;
+    -fx-text-fill: -fx-primary;
+}
+
+.text-field {
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size: 12pt;
+    -jfx-focus-color: -fx-secondary;
+    -fx-text-fill: derive(-fx-secondary, 20%);
+}
+
+#logo-design {
+    -fx-font-family: Archivo Black, Impact, GogoPosterPunch;
+    -fx-font-size: 50px;
+    -fx-background-color: -fx-background-default;;
+    -fx-text-fill: -fx-background-default;
+}
+
+#background-color {
+    -fx-background-color: -fx-primary;
+}
