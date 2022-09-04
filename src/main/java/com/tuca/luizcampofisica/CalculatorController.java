@@ -20,4 +20,8 @@ public class CalculatorController extends Application {
         stage.setFullScreen(true);
         stage.setFullScreen(false);
     }
+
+     public static void main(String[] args) {
+        launch(args);
+    }
 }

@@ -18,39 +18,27 @@ public class VelocityScene {
         stackPane = new StackPane();
 
         /*Velocidade Média*/
-        TextField velocityMedium = new TextField("Digite aqui a velocidade média.");
-        velocityMedium.setTranslateX(-400);
-        velocityMedium.setTranslateY(1);
-        velocityMedium.setMaxSize(50, 5);
+        TextField timeVariationText = new TextField("Digite aqui a variação de tempo.");
+        timeVariationText.setTranslateX(-400);
+        timeVariationText.setTranslateY(1);
+        timeVariationText.setMaxSize(50, 5);
 
-        Text velocityMediumText = new Text("Digite aqui a velocidade média.");
-        velocityMediumText.setTranslateX(-400);
-        velocityMediumText.setTranslateY(-25);
+        Text timeVariation = new Text("Digite aqui a variação de tempo.");
+        timeVariation.setTranslateX(-400);
+        timeVariation.setTranslateY(-25);
 
-
-
-
-        /*Variação de espaço*/
-        TextField spaceVariation = new TextField("Digite aqui a variação de espaço.");
-        spaceVariation.setTranslateX(1);
-        spaceVariation.setTranslateY(1);
-        spaceVariation.setMaxSize(50, 5);
-
-        Text spaceVariationText = new Text("Digite aqui a variação do espaço.");
-        spaceVariationText.setTranslateX(1);
-        spaceVariationText.setTranslateY(-25);
 
         /*Variação do Tempo*/
 
 
-        TextField timeVariation = new TextField("Digite aqui a variação de tempo.");
-        timeVariation.setTranslateX(300);
-        timeVariation.setTranslateY(1);
-        timeVariation.setMaxSize(50, 5);
+        TextField spaceVariation = new TextField("Digite aqui a variação de espaço.");
+        spaceVariation.setTranslateX(300);
+        spaceVariation.setTranslateY(1);
+        spaceVariation.setMaxSize(50, 5);
 
-        Text timeVariationText = new Text("Digite aqui a velocidade média.");
-        timeVariationText.setTranslateX(300);
-        timeVariationText.setTranslateY(-25);
+        Text spaceVariationText = new Text("Digite aqui a variação de espaço.");
+        spaceVariationText.setTranslateX(300);
+        spaceVariationText.setTranslateY(-25);
 
         Button backButton = new Button("Voltar");
         backButton.setOnAction(e -> {
@@ -62,27 +50,34 @@ public class VelocityScene {
             stage.setFullScreen(true);
             stage.setFullScreen(false);
         });
+
         backButton.setTranslateY(315);
         backButton.setTranslateX(-610);
 
-        Text result = new Text("Resultado: ");
-        result.setTranslateX(280);
-        result.setTranslateY(50);
+        Text resultText = new Text("Resultado: ");
+        resultText.setTranslateX(280);
+        resultText.setTranslateY(50);
 
         Button confirmationButton = new Button("Calcular");
+
         confirmationButton.setOnAction(e -> {
-            result.setText("Resultado: " + velocityMedium.getText());
+            Integer timeVariationNumber = Integer.parseInt(timeVariation.getText());
+            Integer spaceVariationNumber = Integer.parseInt(spaceVariation.getText());
+
+            int result = (timeVariationNumber / spaceVariationNumber);
+            System.out.println(timeVariationNumber);
+            System.out.println(spaceVariationNumber);
+
+            resultText.setText("Resultado: " + result + "m/s");
+            confirmationButton.setTranslateY(320);
+            confirmationButton.setTranslateX(600);
         });
-        confirmationButton.setTranslateY(320);
-        confirmationButton.setTranslateX(600);
 
 
         stackPane.getChildren().addAll(
-                velocityMediumText,
-                velocityMedium,
-
                 spaceVariation,
                 spaceVariationText,
+
 
                 timeVariation,
                 timeVariationText,
@@ -90,7 +85,7 @@ public class VelocityScene {
                 backButton,
                 confirmationButton,
 
-                result
+                resultText
         );
 
         Scene scene = new Scene(stackPane, 1000, 1000);
