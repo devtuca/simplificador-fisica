@@ -1,5 +1,6 @@
-package com.tuca.luizcampofisica.scenes;
+package com.tuca.luizcampofisica.scenes.wep;
 
+import com.tuca.luizcampofisica.scenes.InicialScene;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -9,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 
-public class MRUScene {
+public class JobScene {
 
     private static StackPane stackPane;
 

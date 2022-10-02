@@ -24,12 +24,12 @@
     -fx-text-fill: -fx-primary;
 }
 
-.text-field {
+/*.text-field {
     -fx-text-fill: -fx-primarytext;
     -fx-font-size: 12pt;
     -jfx-focus-color: -fx-secondary;
     -fx-text-fill: derive(-fx-secondary, 20%);
-}
+}*/
 
 #logo-design {
     -fx-font-family: Archivo Black, Impact, GogoPosterPunch;
@@ -40,4 +40,8 @@
 
 #background-color {
     -fx-background-color: -fx-primary;
+}
+
+Text {
+    -fx-fill: orange;
 }

@@ -1,13 +1,13 @@
 package com.tuca.luizcampofisica.scenes;
 
+import com.tuca.luizcampofisica.scenes.kinematics.MRUScene;
+import com.tuca.luizcampofisica.scenes.kinematics.MRUVScene;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -18,7 +18,7 @@ public class InicialScene {
 
     public static Scene getInicialScene(Stage stage) throws FileNotFoundException {
         StackPane tilePane = new StackPane();
-        scene = new Scene(tilePane, 650, 650);
+        scene = new Scene(tilePane, 1280, 679);
         scene.getStylesheets().add("com/tuca/velocidade/stylesheet.css");
 
         Image image = new Image("com/tuca/velocidade/simplificador.png");
@@ -32,9 +32,10 @@ public class InicialScene {
 
         tilePane.setId("background-color");
         Button b1 = new Button("Velocidade Média");
+
         b1.setTranslateX(-450);
         b1.setOnAction(e -> {
-            stage.setScene(VelocityScene.getVelocityScene(stage));
+            stage.setScene(VelocityMediumScene.getVelocityMediumScene(stage));
             stage.setFullScreen(true);
             stage.setFullScreen(false);
         });
@@ -42,10 +43,20 @@ public class InicialScene {
 
         Button b2 = new Button("MRU");
         b2.setTranslateX(-300);
+        b2.setOnAction(e -> {
+            stage.setScene(MRUScene.getMRUScene(stage));
+            stage.setFullScreen(true);
+            stage.setFullScreen(false);
+        });
 
 
         Button b3 = new Button("MRUV");
         b3.setTranslateX(-150);
+        b3.setOnAction(e -> {
+            stage.setScene(MRUVScene.getMRUVScene(stage));
+            stage.setFullScreen(true);
+            stage.setFullScreen(false);
+        });
 
 
         Button b4 = new Button("MCU");

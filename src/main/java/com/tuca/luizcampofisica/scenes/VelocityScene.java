@@ -1,10 +1,10 @@
 package com.tuca.luizcampofisica.scenes;
 
+import com.tuca.luizcampofisica.helpers.RegexVerifier;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -17,26 +17,21 @@ public class VelocityScene {
     public static Scene getVelocityScene(Stage stage) {
         stackPane = new StackPane();
 
-        /*Velocidade Média*/
-        TextField timeVariationText = new TextField("Digite aqui a variação de tempo.");
-        timeVariationText.setTranslateX(-400);
-        timeVariationText.setTranslateY(1);
-        timeVariationText.setMaxSize(50, 5);
-
-        Text timeVariation = new Text("Digite aqui a variação de tempo.");
+        TextField timeVariation = new TextField("Digite aqui a variação de tempo.");
         timeVariation.setTranslateX(-400);
-        timeVariation.setTranslateY(-25);
+        timeVariation.setTranslateY(1);
+        timeVariation.setMaxSize(50, 5);
 
-
-        /*Variação do Tempo*/
-
+        Text timeVariationText = new Text("Digite aqui a variação de tempo. (s)");
+        timeVariationText.setTranslateX(-400);
+        timeVariationText.setTranslateY(-25);
 
         TextField spaceVariation = new TextField("Digite aqui a variação de espaço.");
         spaceVariation.setTranslateX(300);
         spaceVariation.setTranslateY(1);
         spaceVariation.setMaxSize(50, 5);
 
-        Text spaceVariationText = new Text("Digite aqui a variação de espaço.");
+        Text spaceVariationText = new Text("Digite aqui a variação de espaço. (m)");
         spaceVariationText.setTranslateX(300);
         spaceVariationText.setTranslateY(-25);
 
@@ -61,18 +56,23 @@ public class VelocityScene {
         Button confirmationButton = new Button("Calcular");
 
         confirmationButton.setOnAction(e -> {
-            Integer timeVariationNumber = Integer.parseInt(timeVariation.getText());
-            Integer spaceVariationNumber = Integer.parseInt(spaceVariation.getText());
 
-            int result = (timeVariationNumber / spaceVariationNumber);
-            System.out.println(timeVariationNumber);
-            System.out.println(spaceVariationNumber);
+            if (RegexVerifier.hasLetters(timeVariation.getText()) || RegexVerifier.hasLetters(spaceVariation.getText())) {
+                System.out.println("tem letras");
+                resultText.setText("Você precisa por números ao invés de letras.");
+                return;
+            }
+
+            float timeVariationNumber = Float.parseFloat(timeVariation.getText());
+            float spaceVariationNumber = Float.parseFloat(spaceVariation.getText());
+            float result = (timeVariationNumber / spaceVariationNumber);
 
             resultText.setText("Resultado: " + result + "m/s");
-            confirmationButton.setTranslateY(320);
-            confirmationButton.setTranslateX(600);
-        });
 
+
+        });
+        confirmationButton.setTranslateY(320);
+        confirmationButton.setTranslateX(600);
 
         stackPane.getChildren().addAll(
                 spaceVariation,
@@ -88,10 +88,11 @@ public class VelocityScene {
                 resultText
         );
 
-        Scene scene = new Scene(stackPane, 1000, 1000);
+        Scene scene = new Scene(stackPane, 1280, 670);
         stage.setFullScreen(true);
         stage.setFullScreen(false);
-        scene.setFill(Color.web("#2E2D37"));
+        stackPane.getStylesheets().add("com/tuca/velocidade/stylesheet.css");
+        stackPane.setId("background-color");
         return scene;
     }
 }
