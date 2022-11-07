@@ -1,5 +1,10 @@
 package com.tuca.luizcampofisica.scenes;
 
+import com.tuca.luizcampofisica.detailer.DynamicDetailer;
+import com.tuca.luizcampofisica.detailer.ElectromagnetismDetailer;
+import com.tuca.luizcampofisica.detailer.EletricityDetailer;
+import com.tuca.luizcampofisica.helpers.BackButtonCreater;
+import com.tuca.luizcampofisica.helpers.LogoCreater;
 import com.tuca.luizcampofisica.scenes.kinematics.MRUScene;
 import com.tuca.luizcampofisica.scenes.kinematics.MRUVScene;
 import javafx.scene.Scene;
@@ -21,106 +26,90 @@ public class InicialScene {
         scene = new Scene(tilePane, 1280, 679);
         scene.getStylesheets().add("com/tuca/velocidade/stylesheet.css");
 
-        Image image = new Image("com/tuca/velocidade/simplificador.png");
-
-        ImageView imageView = new ImageView();
-        imageView.setImage(image);
-        imageView.setTranslateX(1);
-        imageView.setTranslateY(-250);
-        imageView.setFitWidth(575);
-        imageView.setPreserveRatio(true);
+        LogoCreater.createLogo(tilePane);
 
         tilePane.setId("background-color");
-        Button b1 = new Button("Velocidade Média");
+        Button b1 = new Button("Dinâmica");
 
         b1.setTranslateX(-450);
         b1.setOnAction(e -> {
-            stage.setScene(VelocityMediumScene.getVelocityMediumScene(stage));
+            stage.setScene(DynamicDetailer.getDynamicDetailer(stage));
             stage.setFullScreen(true);
             stage.setFullScreen(false);
         });
 
 
-        Button b2 = new Button("MRU");
+        Button b2 = new Button("Eletromagnetismo");
         b2.setTranslateX(-300);
         b2.setOnAction(e -> {
-            stage.setScene(MRUScene.getMRUScene(stage));
+            stage.setScene(ElectromagnetismDetailer.getElectromagnetismDetailer(stage));
             stage.setFullScreen(true);
             stage.setFullScreen(false);
         });
 
 
-        Button b3 = new Button("MRUV");
+        Button b3 = new Button("Eletricidade");
         b3.setTranslateX(-150);
         b3.setOnAction(e -> {
-            stage.setScene(MRUVScene.getMRUVScene(stage));
+            stage.setScene(EletricityDetailer.getEletricityDetailer(stage));
             stage.setFullScreen(true);
             stage.setFullScreen(false);
         });
 
 
-        Button b4 = new Button("MCU");
+        Button b4 = new Button("Gravitação Universal");
         b4.setTranslateX(0);
 
 
-        Button b5 = new Button("L.O");
+        Button b5 = new Button("Impulso");
         b5.setTranslateX(150);
 
 
-        Button b6 = new Button("Dinâmica");
+        Button b6 = new Button("Movimento");
         b6.setTranslateX(300);
 
 
-        Button b7 = new Button("T.E.P");
+        Button b7 = new Button("Cinemática");
         b7.setTranslateX(450);
 
 
-        Button b8 = new Button("I.Q.M");
+        Button b8 = new Button("Ondas");
         b8.setTranslateX(-450);
 
 
-        Button b9 = new Button("Hidrostática");
+        Button b9 = new Button("Ótica");
         b9.setTranslateX(-300);
 
 
-        Button b10 = new Button("Gravitãção U.");
+        Button b10 = new Button("Termologia");
         b10.setTranslateX(-150);
 
 
-        Button b11 = new Button("Escalas Térm.");
+        Button b11 = new Button("Termodinâmica");
         b11.setTranslateX(0);
 
 
-        Button b12 = new Button("Dilatação Térm.");
+        Button b12 = new Button("Força");
         b12.setTranslateX(150);
 
 
-        Button b13 = new Button("Refração");
+        Button b13 = new Button("Energia");
         b13.setTranslateX(300);
 
 
-        Button b14 = new Button("Calorimetria");
+        Button b14 = new Button("Pressão");
         b14.setTranslateX(450);
 
 
-        Button b15 = new Button("Termodinâmica");
-        b15.setTranslateX(-450);
-
-
-        Button b16 = new Button("Eletrostática");
-        b16.setTranslateX(-300);
-
-
-        Button b17 = new Button("Espelhos Esf.");
-        b17.setTranslateX(-150);
+        Button b15 = new Button("Quan. Movimento");
 
         setFirstFloor(b1, b2, b3, b4, b5, b6, b7);
         setSecondFloor(b8, b9, b10, b11, b12, b13, b14);
-        setThreeFloor(b15, b16, b17);
+        setThreeFloor(b15);
         scene.setFill(Color.AQUA);
 
         tilePane.getChildren().addAll(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10,
-                b11, b12, b13, b14, b15, b16, b17, imageView);
+                b11, b12, b13, b14, b15);
         //stage.setFullScreen(true);
         return scene;
     }
